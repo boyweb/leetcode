@@ -1,6 +1,6 @@
 #include "leetcode_header.h"
 
-// #define LEETCODE00146
+#define LEETCODE00010
 
 #ifdef LEETCODE00001
 #include "leetcode00001.cpp"
@@ -14,6 +14,10 @@
 #include "leetcode00005.cpp"
 #endif
 
+#ifdef LEETCODE00010
+#include "leetcode00010.cpp"
+#endif
+
 #ifdef LEETCODE00006
 #include "leetcode00006.cpp"
 #endif
@@ -24,6 +28,10 @@
 
 #ifdef LEETCODE00206
 #include "leetcode00206.cpp"
+#endif
+
+#ifdef LEETCODE00215
+#include "leetcode00215.cpp"
 #endif
 
 int main()
@@ -51,7 +59,13 @@ int main()
 #ifdef LEETCODE00005
     Solution solution;
 
-    cout << solution.longestPalindrome("babad");
+    cout << solution.longestPalindrome("aacaa") << endl;
+#endif
+
+#ifdef LEETCODE00010
+    Solution solution;
+
+    cout << solution.isMatch("bbbba", ".*a*a") << endl;
 #endif
 
 #ifdef LEETCODE00006
@@ -76,6 +90,13 @@ int main()
 
 #ifdef LEETCODE00206
     Solution solution;
+#endif
+
+#ifdef LEETCODE00215
+    Solution solution;
+
+    vector<int> nums = {3, 2, 3, 1, 2, 4, 5, 5, 6};
+    cout << solution.findKthLargest(nums, 4) << endl;
 #endif
 
     return 0;

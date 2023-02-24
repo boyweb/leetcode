@@ -9,6 +9,7 @@
 #include <queue>
 #include <stack>
 #include <algorithm>
+#include <cstring>
 
 using namespace std;
 
