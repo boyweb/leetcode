@@ -1,43 +1,22 @@
 #include "leetcode_header.h"
 
-#define LEETCODE00010
+#define STRINGIFY(X) STRINGIFY2(X)
+#define STRINGIFY2(X) #X
+#define CAT(X, Y) CAT2(X, Y)
+#define CAT2(X, Y) X##Y
+#define CAT_2 CAT
+#define CAT_3(X, Y, Z) CAT(X, CAT(Y, Z))
 
-#ifdef LEETCODE00001
-#include "leetcode00001.cpp"
-#endif
+#define LEETCODE 19
 
-#ifdef LEETCODE00002
-#include "leetcode00002.cpp"
-#endif
+#define LEET_CODE_INCLUDE(NUMBER) STRINGIFY(CAT(NUMBER, .cpp))
 
-#ifdef LEETCODE00005
-#include "leetcode00005.cpp"
-#endif
-
-#ifdef LEETCODE00010
-#include "leetcode00010.cpp"
-#endif
-
-#ifdef LEETCODE00006
-#include "leetcode00006.cpp"
-#endif
-
-#ifdef LEETCODE00146
-#include "leetcode00146.cpp"
-#endif
-
-#ifdef LEETCODE00206
-#include "leetcode00206.cpp"
-#endif
-
-#ifdef LEETCODE00215
-#include "leetcode00215.cpp"
-#endif
+#include LEET_CODE_INCLUDE(LEETCODE)
 
 int main()
 {
 
-#ifdef LEETCODE00001
+#if LEETCODE == 1
     Solution solution;
 
     vector<int> nums{2, 7, 11, 15};
@@ -50,31 +29,53 @@ int main()
         cout << i << " ";
     }
     cout << endl;
-#endif
-
-#ifdef LEETCODE00002
+#elif LEETCODE == 2
     Solution solution;
-#endif
-
-#ifdef LEETCODE00005
+#elif LEETCODE == 5
     Solution solution;
 
     cout << solution.longestPalindrome("aacaa") << endl;
-#endif
-
-#ifdef LEETCODE00010
-    Solution solution;
-
-    cout << solution.isMatch("bbbba", ".*a*a") << endl;
-#endif
-
-#ifdef LEETCODE00006
+#elif LEETCODE == 6
     Solution solution;
 
     cout << solution.convert("ABC", 4) << endl;
-#endif
+#elif LEETCODE == 10
+    Solution solution;
 
-#ifdef LEETCODE00146
+    cout << solution.isMatch("bbbba", ".*a*a") << endl;
+#elif LEETCODE == 15
+    Solution solution;
+    // vector<int> nums = {-1, 0, 1, 2, -1, -4};
+    // vector<int> nums = {1, -1, -1, 0};
+    // vector<int> nums = {1, 1, -2};
+    vector<int> nums = {0, 0, 0};
+
+    auto ret = solution.threeSum(nums);
+    for (auto i : ret)
+    {
+        printf("[%d, %d, %d]\n", i[0], i[1], i[2]);
+    }
+#elif LEETCODE == 17
+    Solution solution;
+    auto ret = solution.letterCombinations("7979");
+    for (auto i : ret)
+    {
+        cout << i << endl;
+    }
+#elif LEETCODE == 19
+    Solution solution;
+
+    ListNode *head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, NULL)))));
+    // ListNode *head = new ListNode(1, NULL);
+
+    auto ret = solution.removeNthFromEnd(head, 1);
+    while (ret != NULL)
+    {
+        cout << ret->val << endl;
+        ret = ret->next;
+    }
+
+#elif LEETCODE == 146
     LRUCache *cache = new LRUCache(2);
 
     cache->put(1, 1);
@@ -86,13 +87,9 @@ int main()
     cout << cache->get(1) << endl;
     cout << cache->get(3) << endl;
     cout << cache->get(4) << endl;
-#endif
-
-#ifdef LEETCODE00206
+#elif LEETCODE == 206
     Solution solution;
-#endif
-
-#ifdef LEETCODE00215
+#elif LEETCODE == 215
     Solution solution;
 
     vector<int> nums = {3, 2, 3, 1, 2, 4, 5, 5, 6};
