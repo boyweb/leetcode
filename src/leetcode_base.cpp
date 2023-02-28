@@ -7,7 +7,7 @@
 #define CAT_2 CAT
 #define CAT_3(X, Y, Z) CAT(X, CAT(Y, Z))
 
-#define LEETCODE 19
+#define LEETCODE 23
 
 #define LEET_CODE_INCLUDE(NUMBER) STRINGIFY(CAT(NUMBER, .cpp))
 
@@ -75,6 +75,44 @@ int main()
         ret = ret->next;
     }
 
+#elif LEETCODE == 20
+    Solution solution;
+    cout << solution.isValid("]") << endl;
+#elif LEETCODE == 21
+    Solution solution;
+
+    ListNode *list1 = new ListNode(1, new ListNode(2, new ListNode(4, NULL)));
+    ListNode *list2 = new ListNode(1, new ListNode(3, new ListNode(4, NULL)));
+
+    auto ret = solution.mergeTwoLists(list1, list2);
+    while (ret != NULL)
+    {
+        cout << ret->val << endl;
+        ret = ret->next;
+    }
+#elif LEETCODE == 22
+    Solution solution;
+    auto ret = solution.generateParenthesis(5);
+    for (auto i : ret)
+    {
+        cout << i << endl;
+    }
+#elif LEETCODE == 23
+    Solution solution;
+    vector<ListNode *> lists = {
+        // NULL,
+        // new ListNode(1, new ListNode(4, new ListNode(5, NULL))),
+        // new ListNode(1, new ListNode(3, new ListNode(4, NULL))),
+        // new ListNode(2, new ListNode(6, NULL)),
+    };
+
+    auto ret = solution.mergeKLists(lists);
+    while (ret != NULL)
+    {
+        cout << ret->val << ", ";
+        ret = ret->next;
+    }
+    cout << endl;
 #elif LEETCODE == 146
     LRUCache *cache = new LRUCache(2);
 
