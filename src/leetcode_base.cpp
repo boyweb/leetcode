@@ -7,7 +7,7 @@
 #define CAT_2 CAT
 #define CAT_3(X, Y, Z) CAT(X, CAT(Y, Z))
 
-#define LEETCODE 23
+#define LEETCODE 42
 
 #define LEET_CODE_INCLUDE(NUMBER) STRINGIFY(CAT(NUMBER, .cpp))
 
@@ -113,6 +113,63 @@ int main()
         ret = ret->next;
     }
     cout << endl;
+#elif LEETCODE == 31
+    Solution solution;
+
+    // vector<int> nums = {1, 9, 5, 8, 7, 3};
+    // vector<int> nums = {1, 2, 3};
+    // vector<int> nums = {3, 2, 1};
+    // vector<int> nums = {1, 1, 5};
+    vector<int> nums = {1, 3, 2};
+    solution.nextPermutation(nums);
+    for (auto i : nums)
+    {
+        cout << i << ", ";
+    }
+    cout << endl;
+#elif LEETCODE == 32
+    Solution solution;
+
+    // cout << solution.longestValidParentheses(")()())") << endl;
+    // cout << solution.longestValidParentheses("(()") << endl;
+    cout << solution.longestValidParentheses("(())()(()())(((()(())") << endl;
+#elif LEETCODE == 33
+    Solution solution;
+
+    vector<int> nums = {3, 1};
+    cout << solution.search(nums, 1) << endl;
+#elif LEETCODE == 34
+    Solution solution;
+
+    vector<int> nums = {5, 7, 7, 8, 8, 10};
+    auto ret = solution.searchRange(nums, 7);
+    cout << ret[0] << "," << ret[1] << endl;
+#elif LEETCODE == 39
+    Solution solution;
+
+    // vector<int> candidates = {2, 3, 6, 7};
+    // int target = 7;
+    // vector<int> candidates = {2, 3, 5};
+    // int target = 8;
+    vector<int> candidates = {8, 7, 4, 3};
+    int target = 11;
+
+    auto ret = solution.combinationSum(candidates, target);
+    for (auto l : ret)
+    {
+        for (auto num : l)
+        {
+            cout << num << ',';
+        }
+        cout << endl;
+    }
+
+#elif LEETCODE == 42
+    Solution solution;
+    // vector<int> height = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+    vector<int> height = {4, 2, 0, 3, 2, 5};
+
+    cout << solution.trap(height) << endl;
 #elif LEETCODE == 146
     LRUCache *cache = new LRUCache(2);
 
