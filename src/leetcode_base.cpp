@@ -7,7 +7,7 @@
 #define CAT_2 CAT
 #define CAT_3(X, Y, Z) CAT(X, CAT(Y, Z))
 
-#define LEETCODE 42
+#define LEETCODE 75
 
 #define LEET_CODE_INCLUDE(NUMBER) STRINGIFY(CAT(NUMBER, .cpp))
 
@@ -15,7 +15,6 @@
 
 int main()
 {
-
 #if LEETCODE == 1
     Solution solution;
 
@@ -29,20 +28,25 @@ int main()
         cout << i << " ";
     }
     cout << endl;
+
 #elif LEETCODE == 2
     Solution solution;
+
 #elif LEETCODE == 5
     Solution solution;
 
     cout << solution.longestPalindrome("aacaa") << endl;
+
 #elif LEETCODE == 6
     Solution solution;
 
     cout << solution.convert("ABC", 4) << endl;
+
 #elif LEETCODE == 10
     Solution solution;
 
     cout << solution.isMatch("bbbba", ".*a*a") << endl;
+
 #elif LEETCODE == 15
     Solution solution;
     // vector<int> nums = {-1, 0, 1, 2, -1, -4};
@@ -55,6 +59,7 @@ int main()
     {
         printf("[%d, %d, %d]\n", i[0], i[1], i[2]);
     }
+
 #elif LEETCODE == 17
     Solution solution;
     auto ret = solution.letterCombinations("7979");
@@ -62,6 +67,7 @@ int main()
     {
         cout << i << endl;
     }
+
 #elif LEETCODE == 19
     Solution solution;
 
@@ -78,6 +84,7 @@ int main()
 #elif LEETCODE == 20
     Solution solution;
     cout << solution.isValid("]") << endl;
+
 #elif LEETCODE == 21
     Solution solution;
 
@@ -90,6 +97,7 @@ int main()
         cout << ret->val << endl;
         ret = ret->next;
     }
+
 #elif LEETCODE == 22
     Solution solution;
     auto ret = solution.generateParenthesis(5);
@@ -97,6 +105,7 @@ int main()
     {
         cout << i << endl;
     }
+
 #elif LEETCODE == 23
     Solution solution;
     vector<ListNode *> lists = {
@@ -113,6 +122,7 @@ int main()
         ret = ret->next;
     }
     cout << endl;
+
 #elif LEETCODE == 31
     Solution solution;
 
@@ -127,23 +137,27 @@ int main()
         cout << i << ", ";
     }
     cout << endl;
+
 #elif LEETCODE == 32
     Solution solution;
 
     // cout << solution.longestValidParentheses(")()())") << endl;
     // cout << solution.longestValidParentheses("(()") << endl;
     cout << solution.longestValidParentheses("(())()(()())(((()(())") << endl;
+
 #elif LEETCODE == 33
     Solution solution;
 
     vector<int> nums = {3, 1};
     cout << solution.search(nums, 1) << endl;
+
 #elif LEETCODE == 34
     Solution solution;
 
     vector<int> nums = {5, 7, 7, 8, 8, 10};
     auto ret = solution.searchRange(nums, 7);
     cout << ret[0] << "," << ret[1] << endl;
+
 #elif LEETCODE == 39
     Solution solution;
 
@@ -170,6 +184,82 @@ int main()
     vector<int> height = {4, 2, 0, 3, 2, 5};
 
     cout << solution.trap(height) << endl;
+
+#elif LEETCODE == 46
+    Solution solution;
+    vector<int> nums = {1, 2, 3, 4, 5, 6};
+
+    auto ret = solution.permute(nums);
+    for (auto l : ret)
+    {
+        for (auto num : l)
+        {
+            cout << num << ',';
+        }
+        cout << endl;
+    }
+
+#elif LEETCODE == 48
+    Solution solution;
+    // vector<vector<int>> matrix = {{1}};
+    // vector<vector<int>> matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    vector<vector<int>> matrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+
+    solution.rotate(matrix);
+    for (auto r : matrix)
+    {
+        for (auto c : r)
+        {
+            cout << c << ", ";
+        }
+        cout << endl;
+    }
+
+#elif LEETCODE == 49
+    Solution solution;
+    // vector<string> strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
+    // vector<string> strs = {""};
+    vector<string> strs = {"", "b"};
+
+    auto ret = solution.groupAnagrams(strs);
+    for (auto g : ret)
+    {
+        for (auto s : g)
+        {
+            cout << s << ", ";
+        }
+        cout << endl;
+    }
+
+#elif LEETCODE == 55
+    Solution solution;
+    // vector<int> nums = {2, 3, 1, 1, 4};
+    vector<int> nums = {3, 2, 1, 0, 4};
+
+    cout << solution.canJump(nums) << endl;
+
+#elif LEETCODE == 62
+    Solution solution;
+    cout << solution.uniquePaths(16, 16) << endl;
+
+#elif LEETCODE == 72
+    Solution solution;
+    // cout << solution.minDistance("horse", "ros") << endl;
+    // cout << solution.minDistance("intention", "execution") << endl;
+    cout << solution.minDistance("a", "a") << endl;
+
+#elif LEETCODE == 75
+    Solution solution;
+    // vector<int> nums = {2, 0, 2, 1, 1, 0};
+    vector<int> nums = {2, 0};
+
+    solution.sortColors(nums);
+    for (auto i : nums)
+    {
+        cout << i << ", ";
+    }
+    cout << endl;
+
 #elif LEETCODE == 146
     LRUCache *cache = new LRUCache(2);
 
@@ -182,13 +272,16 @@ int main()
     cout << cache->get(1) << endl;
     cout << cache->get(3) << endl;
     cout << cache->get(4) << endl;
+
 #elif LEETCODE == 206
     Solution solution;
+
 #elif LEETCODE == 215
     Solution solution;
 
     vector<int> nums = {3, 2, 3, 1, 2, 4, 5, 5, 6};
     cout << solution.findKthLargest(nums, 4) << endl;
+
 #endif
 
     return 0;

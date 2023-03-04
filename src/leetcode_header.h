@@ -10,6 +10,7 @@
 #include <stack>
 #include <algorithm>
 #include <cstring>
+#include <sstream>
 
 using namespace std;
 
